@@ -50,7 +50,7 @@ class Ball:
         """
 
         self.vy = self.vy - g
-        if self.x - self.r >= 750:
+        if self.x + 10 >= 800:
             self.vx = -self.vx
         if self.y -self.r >= 550:
             if -5 < self.vy < 5:
@@ -96,14 +96,8 @@ class Circle:
 
 
     def move(self):
-        """Переместить мяч по прошествии единицы времени.
-
-        Метод описывает перемещение мяча за один кадр перерисовки. То есть, обновляет значения
-        self.x и self.y с учетом скоростей self.vx и self.vy, силы гравитации, действующей на мяч,
-        и стен по краям окна (размер окна 800х600).
-        """
         self.vy = self.vy - g
-        if self.x - self.r >= 730:
+        if self.x + 10 >= 800:
             self.vx = -self.vx
         if self.y - self.r >= 550:
             if -4 < self.vy < 4:
@@ -294,10 +288,10 @@ class Platform:
         keys = pygame.key.get_pressed()
         if self.x <= 780:
             if keys[pygame.K_d]:
-                self.x += 5
+                self.x += 8
         if self.x >= 20:
             if keys[pygame.K_a]:
-                self.x -= 5
+                self.x -= 8
 
     def fire_platform(self):
         global bombs
